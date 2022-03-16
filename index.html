@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jogo da velha - L.Edu.Lima</title>
+	<link rel="shortcut icon" href="imgs/jogo.png">
+	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<meta charset="utf-8">
+</head>
+<body>
+	<div class="box">
+		<div class="options">
+			<div class="placar">
+				<i class='fas fa-times peca1'></i>
+				<i class='far fa-circle peca2'></i>
+			</div>
+
+			<div class="placar meio"></div>
+			
+			<div class="placar fim">
+				<i class="fas fa-undo-alt voltar"></i>
+			</div>
+			
+			<div class="peca" id="1"></div>
+
+			<div class="peca" id="2"></div>
+
+			<div class="peca" id="3"></div>
+
+			<div class="peca" id="4"></div>
+
+			<div class="peca" id="5"></div>
+
+			<div class="peca" id="6"></div>
+
+			<div class="peca" id="7"></div>
+
+			<div class="peca" id="8"></div>
+
+			<div class="peca" id="9"></div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		
+		let vez = 1
+		
+		let ordem = [null, null, null, null, null, null, null, null, null, null]
+		let vitoria = []
+
+		$('.peca').click(function(){
+			var id = $(this).attr('id');
+			//$('.peca').append("<i class='fas fa-times fa-2x'></i>");
+			if(vez % 2 == 0 && vez <= 9){
+				$('#' + id).append("<i class='fas fa-times fa-2x'></i>");
+				vez += 1
+				ordem[id] = 'xis'
+			}else if(vez % 2 == 1 && vez <= 9){
+				$('#' + id).append("<i class='far fa-circle fa-2x'></i>");
+				vez += 1
+				ordem[id] = 'circulo'
+			}
+
+			if (vez > 1) {
+				setInterval(function(){
+					// Verificando se tem vencedores:
+					if (ordem[1] === ordem[2] && ordem[2] === ordem[3] && ordem[1] != null && ordem[2] != null && ordem[3] != null) {
+						//Cria uma borda sobre os elementos ao ganhar:
+						$('#1').css("border", "5px solid white");
+						$('#2').css("border", "5px solid white");
+						$('#3').css("border", "5px solid white");
+						//Desativa os clicks:
+						$('.peca').unbind('click')
+						//Pegando a posição do jogo:
+						vitoria = [1, 2, 3]
+					}else if (ordem[4] === ordem[5] && ordem[5] === ordem[6] && ordem[4] != null && ordem[5] != null && ordem[6] != null) {
+						$('#4').css("border", "5px solid white");
+						$('#5').css("border", "5px solid white");
+						$('#6').css("border", "5px solid white");
+						$('.peca').unbind('click')
+					}else if (ordem[7] === ordem[8] && ordem[8] === ordem[9]  && ordem[7] != null && ordem[8] != null && ordem[9] != null) {
+						$('#7').css("border", "5px solid white");
+						$('#8').css("border", "5px solid white");
+						$('#9').css("border", "5px solid white");
+					}else if (ordem[1] === ordem[4] && ordem[4] === ordem[7] && ordem[1] != null && ordem[4] != null && ordem[7] != null) {
+						$('#1').css("border", "5px solid white");
+						$('#4').css("border", "5px solid white");
+						$('#7').css("border", "5px solid white");
+						$('.peca').unbind('click')
+					}else if (ordem[2] === ordem[5] && ordem[5] === ordem[8] && ordem[2] != null && ordem[5] != null && ordem[8] != null) {
+						$('#2').css("border", "5px solid white");
+						$('#5').css("border", "5px solid white");
+						$('#8').css("border", "5px solid white");
+						$('.peca').unbind('click')
+					}else if (ordem[3] === ordem[6] && ordem[6] === ordem[9] && ordem[3] != null && ordem[6] != null && ordem[9] != null) {
+						$('#3').css("border", "5px solid white");
+						$('#6').css("border", "5px solid white");
+						$('#9').css("border", "5px solid white");
+						$('.peca').unbind('click')
+					}else if (ordem[1] === ordem[5] && ordem[5] === ordem[9] && ordem[1] != null && ordem[5] != null && ordem[9] != null) {
+						$('#1').css("border", "5px solid white");
+						$('#5').css("border", "5px solid white");
+						$('#9').css("border", "5px solid white");
+						$('.peca').unbind('click')
+					}else if (ordem[3] === ordem[5] && ordem[5] === ordem[7] && ordem[3] != null && ordem[5] != null && ordem[7] != null) {
+						$('#3').css("border", "5px solid white");
+						$('#5').css("border", "5px solid white");
+						$('#7').css("border", "5px solid white");
+						$('.peca').unbind('click')
+					}
+				}, 1000)
+			}
+		});
+
+		$('.fim').click(function(){
+			location.reload()
+		})
+	</script>
+</body>
+</html>
