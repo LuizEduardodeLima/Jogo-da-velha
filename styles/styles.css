@@ -1,0 +1,77 @@
+*{
+	margin: 0;
+	padding: 0;
+	background-color: rgb(25, 42, 50);
+}
+
+.box{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.options{
+	display: grid;
+  	grid-template-columns: auto auto auto;
+  	padding: 10px;
+}
+
+.peca{
+	background-color: green;
+	width: 60px;
+	height: 60px;
+	background-color: rgb(31, 53, 64);
+  	border-bottom: solid 5px rgb(17, 31, 40);
+  	border-radius: 25px;
+  	padding: 20px;
+  	font-size: 30px;
+  	text-align: center;
+  	margin: 8px;
+}
+
+.peca > .fas{
+	background-color: rgb(31, 53, 64);
+	color: rgb(49, 195, 190);
+}
+
+.peca > .far{
+	background-color: rgb(31, 53, 64);
+	color: rgb(242, 177, 54);
+}
+
+.placar{
+	width: 60px;
+	height: 30px;
+  	padding: 20px;
+  	font-size: 30px;
+  	text-align: center;
+  	margin: 8px;
+}
+
+.peca1{
+	color: rgb(49, 195, 190);
+}
+
+.peca2{
+	color: rgb(242, 177, 54);
+}
+
+.fim{
+	margin-left: 20px;
+	width: 30px;
+	background-color: rgb(168, 190, 201);
+	border-radius: 25px;
+}
+
+.placar > .voltar{
+	background-color: rgb(168, 190, 201);
+	color: rgb(31, 53, 64);
+}
+
+.placar > .voltar:hover{
+	background-color: rgba(168, 190, 201, 0.8);
+	color: red;
+}
