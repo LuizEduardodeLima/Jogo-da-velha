@@ -6,8 +6,8 @@ Jogo da velha criado com Html, Css e javascript.
 * Tela para escolher personagem
 * Personagem astrounata no modo easy - muito fácil jogar contra ele
 * Personagem robozinho no modo hard - impossível vencer a partida
-* contém placar.
-* reprodução de música
+* Contém placar de pontos.
+* Cada personagem reproduz uma música diferente durante o jogo
 * A cada novo jogo as peças são embaralhadas e mudam de posição
 
 ### Layout inicial:
