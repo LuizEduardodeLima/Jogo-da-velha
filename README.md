@@ -11,6 +11,6 @@ Jogo da velha criado com Html, Css e javascript.
 ### Layout do jogo:
 ![Imagem aviso](https://github.com/LuizEduardodeLima/Jogo-da-velha/blob/main/imgs/layout.png)
 
-### Layout quando o algum a partida é ganha:
+### Layout quando alguém ganha a partida:
 ![Imagem aviso](https://github.com/LuizEduardodeLima/Jogo-da-velha/blob/main/imgs/ganhou.png)
 
