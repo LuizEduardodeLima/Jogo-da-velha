@@ -1,6 +1,9 @@
 # Jogo-da-velha
 Jogo da velha criado com Html, Css e javascript.
 
+### Abaixo link para acessar o jogo:
+* <a name="section" href="https://luizeduardodelima.github.io/Jogo-da-memoria/" target="_blank">Clique aqui para jogar<a/>
+
 ### Funcionalidades do programa:
 * Tela inicial de start
 * Tela para escolher personagem
